@@ -9,7 +9,7 @@ import {
 
 /**
  * @notice implementation of the KIMBER token contract
- * @author Aave (modified by Accu)
+ * @author Aave (modified by Kimber)
  */
 abstract contract GovernancePowerDelegationERC20 is ERC20, IGovernancePowerDelegationToken {
   using SafeMath for uint256;
