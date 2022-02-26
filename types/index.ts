@@ -1,5 +1,5 @@
-import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/dist/src/signers';
-import { InitializableAdminUpgradeabilityProxy, KimberToken } from '../typechain';
+import {SignerWithAddress} from '@nomiclabs/hardhat-ethers/signers';
+import {InitializableAdminUpgradeabilityProxy, KimberToken} from '../typechain';
 
 export enum ContractId {
   KimberToken = 'KimberToken',
