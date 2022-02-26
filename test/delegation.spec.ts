@@ -1,10 +1,10 @@
-import { waffleChai } from '@ethereum-waffle/chai';
-import { TypedDataDomain } from '@ethersproject/abstract-signer';
-import { expect, use } from 'chai';
-import hre, { ethers } from 'hardhat';
-import { DelegationType, Fixture } from '../types';
-import { deployMockDoubleTransfer } from '../utils/contractDeployer';
-import { advanceTimeAndBlock, waitForTx } from '../utils/hhNetwork';
+import {waffleChai} from '@ethereum-waffle/chai';
+import {TypedDataDomain} from '@ethersproject/abstract-signer';
+import {expect, use} from 'chai';
+import hre, {ethers} from 'hardhat';
+import {DelegationType, Fixture} from '../types';
+import {deployMockDoubleTransfer} from '../utils/contractDeployer';
+import {advanceTimeAndBlock, waitForTx} from '../utils/hhNetwork';
 import setupFixture from '../utils/setupFixture';
 
 const {Zero, MaxUint256, AddressZero} = ethers.constants;
@@ -315,9 +315,9 @@ describe('Delegation', () => {
 
     // Calculate expected voting power
     const user2VotPower = await kimberToken.getPowerCurrent(user2.address, DelegationType.PROPOSITION_POWER);
-    const expectedVotingPower = (await kimberToken.getPowerCurrent(user1.address, DelegationType.PROPOSITION_POWER)).add(
-      user2VotPower
-    );
+    const expectedVotingPower = (
+      await kimberToken.getPowerCurrent(user1.address, DelegationType.PROPOSITION_POWER)
+    ).add(user2VotPower);
 
     // Check prior delegatee is still user1
     const priorDelegatee = await kimberToken.getDelegateeByType(user1.address, DelegationType.VOTING_POWER);

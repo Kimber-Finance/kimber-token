@@ -1,8 +1,8 @@
-import { DeployFunction } from 'hardhat-deploy/types';
-import { HardhatRuntimeEnvironment } from 'hardhat/types';
-import { parseNetwork } from '../utils';
-import { deployInitializableAdminUpgradeabilityProxy, deployKimberToken } from '../utils/contractDeployer';
-import { waitForTx } from '../utils/hhNetwork';
+import {DeployFunction} from 'hardhat-deploy/types';
+import {HardhatRuntimeEnvironment} from 'hardhat/types';
+import {parseNetwork} from '../utils';
+import {deployInitializableAdminUpgradeabilityProxy, deployKimberToken} from '../utils/contractDeployer';
+import {waitForTx} from '../utils/hhNetwork';
 
 const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
   const {network} = parseNetwork(hre.network.name);

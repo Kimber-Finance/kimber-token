@@ -1,10 +1,10 @@
-import { waffleChai } from '@ethereum-waffle/chai';
-import { TypedDataDomain } from '@ethersproject/abstract-signer';
-import { _TypedDataEncoder } from '@ethersproject/hash';
-import { expect, use } from 'chai';
-import hre, { ethers } from 'hardhat';
-import { Fixture } from '../types';
-import { deployMockKimberTokenV2 } from '../utils/contractDeployer';
+import {waffleChai} from '@ethereum-waffle/chai';
+import {TypedDataDomain} from '@ethersproject/abstract-signer';
+import {_TypedDataEncoder} from '@ethersproject/hash';
+import {expect, use} from 'chai';
+import hre, {ethers} from 'hardhat';
+import {Fixture} from '../types';
+import {deployMockKimberTokenV2} from '../utils/contractDeployer';
 import setupFixture from '../utils/setupFixture';
 
 const {Zero, MaxUint256, AddressZero} = ethers.constants;
@@ -135,7 +135,10 @@ describe('KIMBER Token', () => {
     const sig = await deployer.signer._signTypedData(domain, permitTypes, value);
     const {r, s, v} = utils.splitSignature(sig);
 
-    expect(await kimberToken.allowance(owner, spender)).to.be.equal(prevPermitAmount, 'INVALID_ALLOWANCE_BEFORE_PERMIT');
+    expect(await kimberToken.allowance(owner, spender)).to.be.equal(
+      prevPermitAmount,
+      'INVALID_ALLOWANCE_BEFORE_PERMIT'
+    );
     await expect(user1.kimberToken.permit(owner, spender, permitAmount, expiration, v, r, s)).not.to.be.reverted;
     expect(await kimberToken.allowance(owner, spender)).to.be.equal(permitAmount, 'INVALID_ALLOWANCE_AFTER_PERMIT');
     expect(await kimberToken._nonces(owner)).to.be.equal(BigNumber.from(2));

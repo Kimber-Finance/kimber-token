@@ -1,10 +1,10 @@
-import { Contract } from 'ethers';
-import { deployments, getNamedAccounts } from 'hardhat';
-import { HardhatRuntimeEnvironment } from 'hardhat/types';
-import { InitializableAdminUpgradeabilityProxy, KimberToken } from '../typechain';
-import { ContractId, ContractRecord, Fixture, User } from '../types';
-import { enumKeys } from '../utils';
-import { getContractAt } from './contractGetter';
+import {Contract} from 'ethers';
+import {deployments, getNamedAccounts} from 'hardhat';
+import {HardhatRuntimeEnvironment} from 'hardhat/types';
+import {InitializableAdminUpgradeabilityProxy, KimberToken} from '../typechain';
+import {ContractId, ContractRecord, Fixture, User} from '../types';
+import {enumKeys} from '../utils';
+import {getContractAt} from './contractGetter';
 import getConfig from './getConfig';
 
 async function setupUser<T extends {[contractName: string]: Contract}>(

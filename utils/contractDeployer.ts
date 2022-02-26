@@ -1,7 +1,7 @@
-import { HardhatRuntimeEnvironment } from 'hardhat/types';
-import { InitializableAdminUpgradeabilityProxy, KimberToken, MockDoubleTransfer, MockKimberTokenV2 } from '../typechain';
-import { Address, ContractId, ContractType } from '../types';
-import { getContractAt } from './contractGetter';
+import {HardhatRuntimeEnvironment} from 'hardhat/types';
+import {InitializableAdminUpgradeabilityProxy, KimberToken, MockDoubleTransfer, MockKimberTokenV2} from '../typechain';
+import {Address, ContractId, ContractType} from '../types';
+import {getContractAt} from './contractGetter';
 import registerContractInJsonDb from './registerContractInJsonDb';
 
 export const deployKimberToken = async (hre: HardhatRuntimeEnvironment): Promise<KimberToken> => {
